@@ -207,7 +207,7 @@ Note: `tech-env.md` assumes A and forbids cloud hosting. B would also need
 that service to reach MCP servers on the laptop and to pass form elicitation
 through to a person, both untested.
 
-[Answer]: 
+[Answer]: A
 
 ## Question 13: Interface (Vision OQ 6)
 A) A local web page: FastAPI, Jinja2 and HTMX on `127.0.0.1:8080`
@@ -221,7 +221,9 @@ D) Other (please describe after [Answer]: tag below)
 Note: `tech-env.md` already specifies A, and its library list has no terminal
 UI library.
 
-[Answer]: 
+[Answer]: C (terminal for chat, local web page for approvals), clarified in two follow-ups:
+1. Stack (follow-up 1 = C): the MVP stays all Python per `tech-env.md` (FastAPI, Jinja2, HTMX on `127.0.0.1:8080`). The AI hub prefers TypeScript and Angular; requirements record this as a possible later port of the web page, out of MVP scope.
+2. Terminal chat (follow-up 2 = A): a plain line-by-line prompt with no terminal UI library; tool calls and results print as text; approvals happen on the web page.
 
 ## Question 14: Engine work and this workflow
 The console needs engine changes that land in the itops-mcp repository: a
@@ -240,7 +242,7 @@ D) Other (please describe after [Answer]: tag below)
 Note: C conflicts with vision features 5, 10, 11 and 12, which go through the
 real engine.
 
-[Answer]: 
+[Answer]: A. Engine work is tracked outside this workflow, in the engine repository. The scope it must cover (from earlier answers): read connectors for CrashPlan, TDX and Sassafras K2; a normalized per-check evidence tool (Q10); fixture data for the demo fleet, including TDX and K2 records; and a demo mode with a no-op runner. These requirements state only the contract the console needs (tools, fields, demo behavior); the console's tests use recorded responses.
 
 ## Question 15: Time in the demo
 Every check has a freshness window. If fixture report dates are fixed, the
