@@ -258,7 +258,7 @@ Note: with B, the agent still sees the raw fixture dates and the real date,
 so its explanations may disagree with the scores unless it is also told the
 "as of" time.
 
-[Answer]: 
+[Answer]: A
 
 ## Question 16: Remote fixes in the MVP (Vision OQ 4)
 Which remediations should be demonstrable end to end (plan, approve,
@@ -275,7 +275,7 @@ D) Other (please describe after [Answer]: tag below)
 If any remediation you choose is not yet in the engine's catalog, name it
 after the letters.
 
-[Answer]: 
+[Answer]: A
 
 ## Question 17: Rendering the approval form
 The act server sends an MCP form elicitation: a message plus a JSON schema
@@ -289,7 +289,7 @@ C) The purpose-built screen for the approval schema, and a generic renderer for 
 
 D) Other (please describe after [Answer]: tag below)
 
-[Answer]: 
+[Answer]: A
 
 ## Question 18: Plans with more than 25 targets
 The success metric covers plans up to 25 targets. What happens above 25?
@@ -300,7 +300,7 @@ B) The console declines any plan with more than 25 targets and tells the person 
 
 C) Other (please describe after [Answer]: tag below)
 
-[Answer]: 
+[Answer]: A
 
 ## Question 19: Engine tokens in the demo (Vision OQ 7)
 The engine refuses to execute without a bearer token. `tech-env.md` says
@@ -313,7 +313,7 @@ B) The console requests tokens from the local issuer at startup and again when t
 
 C) Other (please describe after [Answer]: tag below)
 
-[Answer]: 
+[Answer]: A
 
 ## Question 20: Picking a device
 A) Free text in the chat only (hostname, serial number, or assigned person); the agent resolves it across systems
@@ -322,7 +322,7 @@ B) A device list from the read server that the technician can pick from to start
 
 C) Other (please describe after [Answer]: tag below)
 
-[Answer]: 
+[Answer]: B, with the Question 11 addition: free text is resolved by code to an engine device ID; ambiguous matches are put to the technician in a pick-list and never silently resolved; no match is reported as such.
 
 ## Question 21: Fleet summary ranking (MVP feature 9)
 "The fixes that would bring the most devices into full compliance." Which
@@ -339,7 +339,7 @@ D) Other (please describe after [Answer]: tag below)
 Assumption to confirm or correct in your answer: "no data" and "stale" block
 certification exactly as "fail" does.
 
-[Answer]: 
+[Answer]: C. Assumption confirmed: "no data" and "stale" block certification exactly as "fail" does.
 
 ## Question 22: Where the fleet summary appears
 A) On its own page, computed by code, with an agent-written narrative on request
@@ -348,7 +348,7 @@ B) Only in the chat, when the technician asks
 
 C) Other (please describe after [Answer]: tag below)
 
-[Answer]: 
+[Answer]: A
 
 ## Question 23: Reviewing past transcripts (compliance or team lead)
 A) JSON Lines files only, one per chat session; no viewer in the MVP
@@ -357,7 +357,7 @@ B) JSON Lines files plus a read-only page that lists past sessions and shows eac
 
 C) Other (please describe after [Answer]: tag below)
 
-[Answer]: 
+[Answer]: B
 
 ## Question 24: Offline model (Vision OQ 8)
 A) Choose by measurement: in Construction, run the scenario suite against two or three tool-calling Ollama models that fit the laptop, pick the best, and commit the results
@@ -366,7 +366,7 @@ B) I will name the model (write it after the letter)
 
 C) Other (please describe after [Answer]: tag below)
 
-[Answer]: 
+[Answer]: C ("i want to use sonnet or opus"), clarified in a follow-up (A): drop offline mode. The product uses Claude Opus 5.5 (Sonnet 5.5 for scenario-suite runs) through the hosted gateway only. MVP feature 13 becomes "hosted gateway only"; the Ollama fallback and its risk move out of MVP scope as a possible later addition. The demo requires network access to the gateway. Recorded as a deviation from `docs/vision.md` and `docs/tech-env.md` (those files are not edited).
 
 ## Question 25: Memory of the demo laptops
 This limits which Ollama models can run. If the two laptops differ, give the
@@ -380,7 +380,7 @@ C) 48 GB or more
 
 D) Other (please describe after [Answer]: tag below)
 
-[Answer]: 
+[Answer]: N/A. Moot after Question 24 dropped the offline Ollama model; the laptop runs only the console and engine.
 
 ## Question 26: Scope of the 15-minute setup target
 The vision targets a clean clone to a working demo in under 15 minutes. Does
@@ -392,7 +392,7 @@ B) Yes: it includes installing Ollama and downloading the offline model
 
 C) Other (please describe after [Answer]: tag below)
 
-[Answer]: 
+[Answer]: Resolved by Question 24: the 15-minute target covers the hosted-gateway path, the only path in the MVP. No offline setup to document or time.
 
 ## Question 27: Writing the ten evaluation scenarios
 A) The AI drafts the ten scenarios (device, expected cause, expected fix or "no reviewed fix") from the fixture fleet, and you review and approve them before any run
@@ -401,7 +401,7 @@ B) You write them
 
 C) Other (please describe after [Answer]: tag below)
 
-[Answer]: 
+[Answer]: A
 
 ## Question 28: Accessibility
 A) Semantic HTML, a fully keyboard-operable approval screen, and sufficient color contrast; no formal conformance target
@@ -412,7 +412,7 @@ C) No specific requirement
 
 D) Other (please describe after [Answer]: tag below)
 
-[Answer]: 
+[Answer]: A
 
 ---
 
@@ -429,7 +429,7 @@ Note: `tech-env.md` already sets many security controls (origin and CSRF
 checks, hash-locked dependencies, secret scanning, OWASP LLM Top 10 mapping).
 This extension would add its rules as blocking checks at every stage.
 
-[Answer]: 
+[Answer]: A
 
 ## Question 30: Resiliency Extensions
 Should the resiliency baseline be applied to this project?
@@ -449,7 +449,7 @@ X) Other (please describe after [Answer]: tag below)
 Note: the product is a single-user demo on one laptop with no cloud
 deployment.
 
-[Answer]: 
+[Answer]: B
 
 ## Question 31: Property-Based Testing Extension
 Should property-based testing (PBT) rules be enforced for this project?
@@ -466,4 +466,4 @@ Note: the pure rule engine (`baseline/rules.py`) and policy loader are good
 PBT candidates. Enabling PBT would add `hypothesis` as a development
 dependency; it is not in the `tech-env.md` list today.
 
-[Answer]: 
+[Answer]: B

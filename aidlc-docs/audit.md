@@ -272,3 +272,236 @@
 **Context**: INCEPTION - Requirements Analysis, Step 6 (paused before scope decision and Question 15)
 
 ---
+
+## Requirements Analysis - Pending decision resolved and Q15
+**Timestamp**: 2026-11-19T17:04:57Z
+**User Input**: "c" (follow-up 1: keep the real-engine plan), then "a" (read as follow-up 2 = A and Q15 = A, both recommended; read back to the user for correction)
+**AI Response**: Q14 stays A. Vision wording and Q16/Q19 unchanged. Stakeholder check-in still gates all code. Q15 = A (relative timestamps). Next: Q16.
+**Context**: Requirements Analysis, Q14 follow-ups and Q15
+
+---
+
+## Requirements Analysis - Q16
+**Timestamp**: 2026-11-19T17:05:08Z
+**User Input**: "a"
+**AI Response**: Q16 = A (reinstall the endpoint protection agent is the only end-to-end remediation; others explain-only). Next: Q17.
+**Context**: Requirements Analysis, Q16
+
+---
+
+## Requirements Analysis - Q17
+**Timestamp**: 2026-11-19T17:06:52Z
+**User Input**: "a"
+**AI Response**: Q17 = A (purpose-built approval screen; non-matching elicitations declined with an explanation). Next: Q18.
+**Context**: Requirements Analysis, Q17
+
+---
+
+## Requirements Analysis - Q18
+**Timestamp**: 2026-11-19T17:07:02Z
+**User Input**: "a"
+**AI Response**: Q18 = A (no target limit in the console; tests cover 25 and a larger plan). Next: Q19.
+**Context**: Requirements Analysis, Q18
+
+---
+
+## Requirements Analysis - Q19
+**Timestamp**: 2026-11-19T17:07:47Z
+**User Input**: "a"
+**AI Response**: Q19 = A (manual tokens in .env; console refuses to start without them and reports expiry). Next: Q20 (must also cover device identity resolution by code, from Q11).
+**Context**: Requirements Analysis, Q19
+
+---
+
+## Requirements Analysis - Q20
+**Timestamp**: 2026-11-19T17:08:29Z
+**User Input**: "b"
+**AI Response**: Q20 = B (device list from the read server, free text also accepted), with code-side identity resolution and a pick-list for ambiguous matches (Q11 open item closed). Next: Q21.
+**Context**: Requirements Analysis, Q20
+
+---
+
+## Requirements Analysis - Q21
+**Timestamp**: 2026-11-19T17:10:59Z
+**User Input**: "c"
+**AI Response**: Q21 = C (both per-check and per-remediation rankings). The assumption that "no data" and "stale" block certification exactly as "fail" does was not addressed; asked as a follow-up. Next: Q22.
+**Context**: Requirements Analysis, Q21
+
+---
+
+## Requirements Analysis - Q21 assumption and Q22
+**Timestamp**: 2026-11-19T17:11:38Z
+**User Input**: "q21 yes. q22 A"
+**AI Response**: Q21 assumption confirmed ("no data" and "stale" block certification exactly as "fail" does). Q22 = A (fleet summary on its own page, computed by code, agent narrative on request). Next: Q23.
+**Context**: Requirements Analysis, Q21 follow-up and Q22
+
+---
+
+## Requirements Analysis - Q23
+**Timestamp**: 2026-11-19T17:12:24Z
+**User Input**: "b"
+**AI Response**: Q23 = B (JSON Lines transcripts plus a read-only past-sessions viewer page). Next: Q24.
+**Context**: Requirements Analysis, Q23
+
+---
+
+## Requirements Analysis - Q24
+**Timestamp**: 2026-11-19T17:13:29Z
+**User Input**: "c. i want to use sonnet or opus" then, after a follow-up explaining Q24 is about the offline fallback, "A"
+**AI Response**: Q24 resolved as: drop offline mode. Opus 5.5 (Sonnet 5.5 for suite runs) through the hosted gateway only; feature 13 becomes gateway-only; Ollama fallback out of MVP scope. Deviation from vision.md and tech-env.md to be recorded in requirements.md. Next: Q25.
+**Context**: Requirements Analysis, Q24
+
+---
+
+## Requirements Analysis - Q25 skipped
+**Timestamp**: 2026-11-19T17:13:35Z
+**User Input**: (none; follows from Q24)
+**AI Response**: Q25 (laptop memory for Ollama models) marked N/A because Q24 dropped the offline model. Next: Q26.
+**Context**: Requirements Analysis, Q25
+
+---
+
+## Requirements Analysis - Q26 resolved by Q24
+**Timestamp**: 2026-11-19T17:13:42Z
+**User Input**: (none; follows from Q24)
+**AI Response**: Q26 resolved: the 15-minute setup target covers the hosted-gateway path only, since the MVP has no offline path. Next: Q27.
+**Context**: Requirements Analysis, Q26
+
+---
+
+## Requirements Analysis - Q27
+**Timestamp**: 2026-11-19T17:14:08Z
+**User Input**: "a"
+**AI Response**: Q27 = A (AI drafts the ten scenarios from the fixture fleet; user approves before any run). Next: Q28.
+**Context**: Requirements Analysis, Q27
+
+---
+
+## Requirements Analysis - Q28
+**Timestamp**: 2026-11-19T17:14:30Z
+**User Input**: "a"
+**AI Response**: Q28 = A (semantic HTML, keyboard-operable approval screen, sufficient contrast; no formal conformance target). Next: Q29 (Security extension opt-in).
+**Context**: Requirements Analysis, Q28
+
+---
+
+## Requirements Analysis - Q29-Q31 (extension opt-ins)
+**Timestamp**: 2026-11-19T17:15:30Z
+**User Input**: "29 A, 30 B, 31 B"
+**AI Response**: Security Baseline enabled (blocking). Resiliency Baseline disabled (skip logged). Property-Based Testing enabled as Partial (pure functions and serialization round-trips). All 31 questions answered; generating requirements.md.
+**Context**: Requirements Analysis, extension configuration
+
+---
+
+## Requirements Analysis - Requirements document and approval prompt
+**Timestamp**: 2026-11-19T17:17:47Z
+**User Input**: (none; follows from Q29-Q31)
+**AI Response**: Loaded security-baseline.md and property-based-testing.md (resiliency rules not loaded: opted out). Created aidlc-docs/inception/requirements/requirements.md (comprehensive depth): intent analysis, deviations DEV-1 to DEV-9, functional requirements, NFRs, security requirements SEC-REQ-1 to SEC-REQ-15, PBT requirements (Partial), engine contract, risks, five items for review. Security compliance: no open blocking findings; SECURITY-02 and SECURITY-06 N/A; SECURITY-01, 03, 04, 14 adapted to a local laptop with stated exceptions. Resiliency extension skipped (disabled). Presented approval prompt: Request Changes, or Approve & Continue to User Stories.
+**Context**: Requirements Analysis, Step 7-9
+
+---
+
+## Requirements Analysis - Approval
+**Timestamp**: 2026-11-19T17:19:19Z
+**User Input**: "approve and continue"
+**AI Response**: Requirements Analysis marked complete. Starting User Stories, Part 1 (planning).
+**Context**: Requirements Analysis approved; transition to User Stories
+
+---
+
+## User Stories - Assessment and plan
+**Timestamp**: 2026-11-19T17:19:51Z
+**User Input**: (none; follows from approval)
+**AI Response**: Assessment written (execute: yes; multi-persona, user-facing, complex rules). Created aidlc-docs/inception/plans/story-generation-plan.md with five planning questions and the Part 2 checklist. Asking questions in chat one at a time per the session's answer mode.
+**Context**: User Stories, Part 1 Steps 1-7
+
+---
+
+## User Stories - Planning Q1
+**Timestamp**: 2026-11-19T17:20:18Z
+**User Input**: "a"
+**AI Response**: Q1 = A (epics by user journey, stories under each). Next: Q2.
+**Context**: User Stories, Part 1 planning questions
+
+---
+
+## User Stories - Planning Q2
+**Timestamp**: 2026-11-19T17:20:47Z
+**User Input**: "a"
+**AI Response**: Q2 = A (medium granularity, about 20 to 30 stories). Next: Q3.
+**Context**: User Stories, Part 1 planning questions
+
+---
+
+## User Stories - Planning Q2 and answer-file repair
+**Timestamp**: 2026-11-19T17:21:06Z
+**User Input**: "a"
+**AI Response**: Q2 = A (medium granularity, about 20 to 30 stories). Found and fixed a recording error: since Q15 of Requirements Analysis, answers had been written onto the "Other (please describe after [Answer]: tag below)" option line instead of the [Answer]: tag. Moved 17 answers (requirements Q15-Q31) and 2 answers (story plan Q1-Q2) to their tags and restored the option lines. Answer values unchanged; requirements.md, audit.md and aidlc-state.md were already correct. Next: Q3.
+**Context**: User Stories, Part 1 planning questions; record repair
+
+---
+
+## User Stories - Planning Q3
+**Timestamp**: 2026-11-19T17:21:23Z
+**User Input**: "c"
+**AI Response**: Q3 = C (Given/When/Then for scoring and approval stories; checklist bullets for the rest). Next: Q4.
+**Context**: User Stories, Part 1 planning questions
+
+---
+
+## User Stories - Planning Q4
+**Timestamp**: 2026-11-19T17:22:06Z
+**User Input**: "a"
+**AI Response**: Q4 = A (the three vision personas only). Setup and scenario-suite stories will be written for the technician persona. Next: Q5.
+**Context**: User Stories, Part 1 planning questions
+
+---
+
+## User Stories - Planning Q5 and plan approval prompt
+**Timestamp**: 2026-11-19T17:22:34Z
+**User Input**: "a"
+**AI Response**: Q5 = A (separate misuse stories with attack-fails acceptance criteria). Answer analysis: all five answers are single, unambiguous options; no follow-ups needed. Approval prompt presented: "Approve the story plan (journey epics, about 20-30 stories, mixed acceptance criteria, three personas, misuse stories) to start generation, or request changes."
+**Context**: User Stories, Part 1 Steps 8-12
+
+---
+
+## User Stories - Plan approval, generation and approval prompt
+**Timestamp**: 2026-11-19T17:24:41Z
+**User Input**: "approve and continue"
+**AI Response**: Story plan approved. Generated aidlc-docs/inception/user-stories/personas.md (P1-P3) and stories.md (5 journey epics, 30 user stories, epic E6 with 6 misuse stories, persona map, FR coverage table, INVEST check). All plan checkboxes marked. Security compliance: SECURITY-11 misuse scenarios documented (MS-1 to MS-6); other rules unchanged from Requirements Analysis; no blocking findings. Approval prompt presented: Request Changes, or Approve & Continue to Workflow Planning.
+**Context**: User Stories, Part 2 Steps 15-20
+
+---
+
+## User Stories - Approval
+**Timestamp**: 2026-11-19T17:25:52Z
+**User Input**: "approve and continue"
+**AI Response**: User Stories marked complete. Starting Workflow Planning.
+**Context**: User Stories approved; transition to Workflow Planning
+
+---
+
+## Workflow Planning - Execution plan and approval prompt
+**Timestamp**: 2026-11-19T17:26:39Z
+**User Input**: (none; follows from User Stories approval)
+**AI Response**: Created aidlc-docs/inception/plans/execution-plan.md. Execute: Application Design, Units Generation, Functional Design, NFR Requirements (light), NFR Design, Code Generation, Build and Test. Skip: Infrastructure Design (local only). Risk: High. Mermaid diagram validated (alphanumeric node IDs, no unescaped quotes) with a text alternative. Approval prompt presented: Request Changes, Add Skipped Stages, or Approve & Continue to Application Design.
+**Context**: Workflow Planning, Steps 1-9
+
+---
+
+## Workflow Planning - Request Changes (stakeholder call)
+**Timestamp**: 2026-11-19T17:34:01Z
+**User Input**: "Request Changes: before continuing, record the 2026-11-18 stakeholder call. The stakeholder agreed the project is a proof of concept and demo, advised starting read-only and non-dangerous before approval and audit, and asked whether approval is enforced in the harness or at the server. Update requirements.md so the MVP states that every remediation runs only on the engine's no-op demo runner, and that approval is enforced at both layers. Then check stories and the plan for impact."
+**AI Response**: Recorded the call (names kept out of this public repository). Before this, at the user's request, the AI read the user's saved meeting summary and transcript outside the repository to find the call's project-relevant points; only those are recorded here. Changes: requirements.md adds the call to section 1.1, FR-REM-3 (every MVP remediation runs only on the engine's no-op demo runner; the approval page and results say so; real devices out of MVP scope), FR-APR-8 (approval enforced at the server, by the act server's elicitation and audit row, and in the harness, where the console has no automatic approve path; tested per layer), a risk row and an out-of-scope line. Impact check: stories.md US-2.1, US-2.2 and US-2.4 updated with acceptance criteria and coverage rows for FR-REM-3 and FR-APR-8; no persona changes. execution-plan.md adds a stakeholder-guidance note; no stage changes, and Application Design must place the two approval layers in separate modules. aidlc-state.md: call marked held; whether the code gate is cleared is left to the user. Re-presented the execution plan for approval.
+**Context**: Workflow Planning, change request and upstream impact check
+
+---
+
+## Workflow Planning - Approval
+**Timestamp**: 2026-11-19T17:37:03Z
+**AI Prompt**: "Request Changes, Add Skipped Stages, or Approve & Continue to Application Design?"
+**User Response**: "approve and continue, commit and push"
+**Status**: Approved
+**Context**: Execution plan approved with 7 stages to execute (Application Design, Units Generation, Functional Design, NFR Requirements, NFR Design, Code Generation, Build and Test) and Infrastructure Design skipped. For the class milestone the workflow stops after Units Generation. Committing and pushing at this gate before a context reset.
+
+---
