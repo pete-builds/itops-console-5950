@@ -505,3 +505,145 @@
 **Context**: Execution plan approved with 7 stages to execute (Application Design, Units Generation, Functional Design, NFR Requirements, NFR Design, Code Generation, Build and Test) and Infrastructure Design skipped. For the class milestone the workflow stops after Units Generation. Committing and pushing at this gate before a context reset.
 
 ---
+
+## Session resume - Application Design start
+**Timestamp**: 2026-11-19T18:00:38Z
+**User Input**: "Go to aidlc-docs/aidlc-state.md, find the first unchecked item, then go to the corresponding plan file and resume from that point.\""
+**AI Response**: First unchecked item in aidlc-state.md: Application Design. No application-design plan file existed, so resumed from execution-plan.md (Application Design - EXECUTE). Loaded requirements.md, stories.md, execution-plan.md, tech-env.md, the Security Baseline rules (enabled) and common rules. Created aidlc-docs/inception/plans/application-design-plan.md with plan checkboxes (steps 1-4 done) and nine design questions (package layout, evidence adapter, core type style, model tool access and who starts execution, read-tool allowlist, run-time act-server cross-check for FR-APR-8, session orchestration, component wiring, event fan-out). Per session notes, questions are asked in chat one at a time. Asked Q1.
+**Context**: INCEPTION - Application Design, Steps 1-6
+
+---
+
+## Application Design - Q1
+**Timestamp**: 2026-11-19T18:02:25Z
+**User Input**: "a no need to rename it"
+**AI Response**: Q1 = A (keep the tech-env.md project structure, add missing modules, no renaming). Next: Q2.
+**Context**: INCEPTION - Application Design, collecting answers
+
+---
+
+## Application Design - Q2
+**Timestamp**: 2026-11-19T18:08:51Z
+**User Input**: "A - it keeps the timing rick of the template inside one mdule"
+**AI Response**: Q2 = A (evidence adapter in the engine-integration layer converts engine evidence to console types; the rule engine depends only on console types). Next: Q3.
+**Context**: INCEPTION - Application Design, collecting answers
+
+---
+
+## Application Design - Q3
+**Timestamp**: 2026-11-19T18:09:41Z
+**User Input**: "A"
+**AI Response**: Q3 = A (frozen dataclasses in the baseline core; pydantic only at the boundaries). Next: Q4.
+**Context**: INCEPTION - Application Design, collecting answers
+
+---
+
+## Application Design - Q4
+**Timestamp**: 2026-11-19T19:13:15Z
+**User Input**: "a"
+**AI Response**: Q4 = A (model gets read tools and plan_remediation; only a technician-typed terminal command calls execute_remediation, gated by the approval page; the model can never start an execution). Next: Q5.
+**Context**: INCEPTION - Application Design, collecting answers
+
+---
+
+## Application Design - Q5
+**Timestamp**: 2026-11-19T19:14:13Z
+**User Input**: "A"
+**AI Response**: Q5 = A (fixed allowlist of read-server tools in console code; new engine tools are not offered until added). Next: Q6.
+**Context**: INCEPTION - Application Design, collecting answers
+
+---
+
+## Session resume - Application Design, Q6 to Q9
+**Timestamp**: 2026-11-24T18:10:36Z
+**User Input**: "need to finish my assignment"
+**AI Response**: Read aidlc-state.md: Application Design in progress, Q1 to Q5 answered, Q6 to Q9 open in aidlc-docs/inception/plans/application-design-plan.md; class milestone stops after Units Generation. Treated the request as "continue where you left off", so the welcome-back menu was not shown. Reloaded requirements.md, stories.md, execution-plan.md, docs/tech-env.md, the Application Design and Units Generation rules, content validation rules and the enabled extension rules. Asked Q6 to Q9.
+**Context**: INCEPTION - Application Design, Step 5 (collecting answers)
+
+---
+
+## Application Design - Q6 to Q9
+**Timestamp**: 2026-11-24T18:13:21Z
+**User Input**: "Q6: A: Run-time check (Recommended); Q7: A: Session service (Recommended); Q8: A: Composition root (Recommended); Q9: A: One event, fanned out (Recommended)" (selected together in one multiple-choice dialog; the labels are the user's selections, verbatim)
+**AI Response**: Q6 = A (act client wrapper cross-checks execute_remediation results against the approval store at run time). Q7 = A (chat session service orchestrates; the agent loop only runs model turns and tool calls). Q8 = A (one composition root; no module-level singletons). Q9 = A (one session event type fanned out to transcript, terminal and log). Answers written to application-design-plan.md. Answer analysis: all nine answers single options, no conflicts (Q1/Q8, Q4/Q6, Q7/Q9, Q2/Q3 checked); no follow-ups. Plan steps 5 and 6 marked done.
+**Context**: INCEPTION - Application Design, Steps 7-9 (collect and analyze answers)
+
+---
+
+## Application Design - Plan approval prompt
+**Timestamp**: 2026-11-24T18:13:21Z
+**AI Prompt**: "Application design plan answers are complete with no follow-ups needed. Approve the plan and generate the design artifacts (components.md, component-methods.md, services.md, component-dependency.md, application-design.md)?"
+**Context**: INCEPTION - Application Design, plan step 7
+
+---
+
+## Application Design - Plan approval
+**Timestamp**: 2026-11-24T18:14:30Z
+**User Input**: "Approve and generate"
+**Status**: Approved
+**AI Response**: Plan step 7 marked done. Generating the Application Design artifacts (plan steps 8 to 14).
+**Context**: INCEPTION - Application Design, Part 2 Generation
+
+---
+
+## Application Design - Generation and approval prompt
+**Timestamp**: 2026-11-24T18:26:41Z
+**User Input**: (none; follows from plan approval)
+**AI Response**: Generated aidlc-docs/inception/application-design/components.md (31 components C1-C31, 16 new modules, web route table), component-methods.md (typed signatures per component), services.md (S1-S8, two sequence diagrams), component-dependency.md (group and module dependency matrices, import-boundary rules B1-B9, communication patterns, architecture diagram, data flows) and application-design.md (consolidated: decisions Q1-Q9, FR-APR-8 two-layer placement in mcp/approvals.py and mcp/act_guard.py, security-critical modules, misuse cases MS-1 to MS-6 plus MS-7 to MS-9 found in design, SEC-REQ map, FR and story traceability, validation, 10 open items, 8 review items). Validation: every FR and story maps to a component; one module import cycle (evidence adapter and clients) found and removed; baseline core does no I/O (policy file read by main.py). Mermaid: mmdc not installed, four diagrams checked by hand against content-validation rules, each with a text alternative. Security Baseline: no blocking findings (SECURITY-02, 06 N/A; 10 N/A at this stage). PBT Partial: PBT-02, 03, 09 compliant; 07, 08 N/A at this stage. Plan steps 8-14 marked done.
+**AI Prompt**: "Application Design complete. Review the artifacts in aidlc-docs/inception/application-design/. Request Changes, or Approve & Continue to Units Generation?"
+**Context**: INCEPTION - Application Design, Steps 10-12 (generation, completion message)
+
+---
+
+## Application Design - Approval
+**Timestamp**: 2026-11-24T18:28:33Z
+**User Input**: "Approve & Continue"
+**Status**: Approved
+**AI Response**: Application Design marked complete in aidlc-state.md; plan step 15 marked done. Starting Units Generation.
+**Context**: Application Design approved; transition to Units Generation
+
+---
+
+## Units Generation - Plan and questions
+**Timestamp**: 2026-11-24T18:28:33Z
+**User Input**: (none; follows from Application Design approval)
+**AI Response**: Loaded .aidlc-rule-details/inception/units-generation.md and the code-generation structure patterns. Created aidlc-docs/inception/plans/unit-of-work-plan.md (steps 1-4 done) with five questions: unit boundaries (Q1), build order (Q2), shared test support (Q3), integration risk spikes for fastmcp elicitation and gateway tool calling (Q4), code organization on disk (Q5; the AI-DLC monolith default src/{unit}/ conflicts with Application Design Q1 = A). Team alignment not asked (solo project, engine outside this workflow), with the justification in the plan. Asked Q1 to Q5.
+**Context**: INCEPTION - Units Generation, Part 1 Steps 1-5
+
+---
+
+## Units Generation - Q1 to Q5
+**Timestamp**: 2026-11-24T18:31:47Z
+**User Input**: "Q1: A: Six, fleet separate (Recommended); Q2: A: Read-only first (Recommended); Q3: A: Shared test support (Recommended); Q4: A: Spike first (Recommended); Q5: A: tech-env layout (Recommended)" (selected in two multiple-choice dialogs; the labels are the user's selections, verbatim)
+**AI Response**: Q1 = A (six units: U1 baseline core, U2 platform and engine integration, U3 agent and terminal chat, U4 web and approval page, U5 fleet summary, U6 scenario suite). Q2 = A (build order U1, U2, U3, U4, U6, U5). Q3 = A (shared test-support package built in U2). Q4 = A (spike for fastmcp elicitation and gateway tool calling before U2's Functional Design, gated like code). Q5 = A (keep the tech-env.md layout; record the difference from the AI-DLC monolith default). Answers written to unit-of-work-plan.md. Analysis: no ambiguity; Q1/Q2 (approval store in U2 vs read-only first) checked and consistent because no person can reach an execution until U3 and U4; no follow-ups. Steps 5 and 6 marked done.
+**AI Prompt**: "Unit of work plan complete. Review the plan in aidlc-docs/inception/plans/unit-of-work-plan.md. Ready to proceed to generation?"
+**Context**: INCEPTION - Units Generation, Part 1 Steps 6-9
+
+---
+
+## Units Generation - Plan approval
+**Timestamp**: 2026-11-24T18:33:10Z
+**User Input**: "Approve and generate"
+**Status**: Approved
+**AI Response**: Plan step 7 marked done; Units Generation Part 1 complete. Starting Part 2 generation. Two refinements that follow from Q1 = A and Q3 = A, applied and disclosed: (1) the fleet-only types (FleetSummary, CheckGap, RemediationImpact, RemediationCatalogEntry, DeviceRef) move from baseline/models.py (C1) to baseline/fleet.py (C5) in components.md and component-methods.md, so U5 can be dropped without leaving unused types in U1; (2) tests/support/ starts in U1 with the Hypothesis domain strategies that U1's property tests need, and U2 adds the fakes and recorded responses.
+**Context**: INCEPTION - Units Generation, Part 2 Generation
+
+---
+
+## Units Generation - Generation and approval prompt
+**Timestamp**: 2026-11-24T18:36:58Z
+**User Input**: (none; follows from plan approval)
+**AI Response**: Generated aidlc-docs/inception/application-design/unit-of-work.md (six units with components, modules, requirements, Functional Design depth, definition of done, open items per unit; what dropping U5 means; common definition of done; code organization tree keeping the tech-env.md layout with the difference from the AI-DLC src/{unit}/ default recorded; the two design refinements; validation; extension compliance), unit-of-work-dependency.md (acyclic unit matrix, additive extension points for main.py, scoring.py, app.py and tests/, build order with gates, Mermaid build-order diagram with text alternative, integration approach with shared fakes, risk spikes S-1 elicitation and S-2 gateway tool calling, shared-resource rules) and unit-of-work-story-map.md (36 stories, each with one primary unit; per-unit counts U1 9+1, U2 6+2, U3 6+1, U4 4+2, U5 4, U6 1; personas per unit). Validation: all 31 components assigned once; story map checked by script against stories.md (36 = 36, exact match); no unit cycles; fleet droppable. Security Baseline: no blocking findings. PBT Partial: compliant or planned. Plan steps 8-12 marked done.
+**AI Prompt**: "Units Generation complete. Review the artifacts in aidlc-docs/inception/application-design/. Request Changes, or Approve & Continue (milestone stop before the CONSTRUCTION PHASE)?"
+**Context**: INCEPTION - Units Generation, Steps 12-16
+
+---
+
+## Units Generation - Approval
+**Timestamp**: 2026-11-24T18:39:37Z
+**User Input**: "Approve, commit and push"
+**Status**: Approved
+**AI Response**: Units Generation marked complete; INCEPTION phase complete. aidlc-state.md updated: class milestone reached (stop before Construction); unit checklist added in build order; next step is U1 Functional Design, with the risk spike and all Code Generation Part 2 waiting for the stakeholder gate. Plan step 13 marked done. Committing and pushing this session's work on branch aidlc/inception.
+**Context**: Units Generation approved; INCEPTION complete; milestone stop
+
+---
