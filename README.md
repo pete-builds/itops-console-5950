@@ -12,7 +12,7 @@ project.
 | **Team** | Pete Stergion, NetID `ps959` (solo project, approved in writing by the course instructor on November 2, 2026) |
 | **Coding agent** | Claude Code, running Claude Opus 5.5 |
 | **Methodology** | AI-DLC v1.0.1 ([release](https://github.com/awslabs/aidlc-workflows/releases/tag/v1.0.1)) |
-| **LLM in the product** | Claude Opus 5.5 through the university's OpenAI-compatible AI gateway; Claude Sonnet 5.5 for test runs; an Ollama model as the offline fallback |
+| **LLM in the product** | Claude Opus 5.5 through the university's OpenAI-compatible AI gateway; Claude Sonnet 5.5 for test runs; no offline mode in the MVP (requirements DEV-1) |
 | **Runs** | Locally on one laptop |
 
 ## Problem and why an LLM fits
